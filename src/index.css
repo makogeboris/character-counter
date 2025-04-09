@@ -60,25 +60,31 @@
   background-repeat: no-repeat;
 }
 
-.character {
-  background-image: var(--bg-pattern-character);
-  background-position: 145%;
+.character,
+.sentence,
+.word {
   background-position: right;
   background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 40rem) {
+  .character,
+  .sentence,
+  .word {
+    background-position: 145%;
+  }
+}
+
+.character {
+  background-image: var(--bg-pattern-character);
 }
 
 .sentence {
   background-image: var(--bg-pattern-sentence);
-  background-position: 145%;
-  background-position: right;
-  background-repeat: no-repeat;
 }
 
 .word {
   background-image: var(--bg-pattern-word);
-  background-position: 145%;
-  background-position: right;
-  background-repeat: no-repeat;
 }
 
 /* Custom checkbox */

@@ -1,5 +1,11 @@
+import { useState } from "react";
+
 function LetterDensity() {
-  const overflow = true;
+  const [text, setText] = useState("More");
+
+  const toggleText = () => {
+    setText((prev) => (prev === "More" ? "Less" : "More"));
+  };
 
   return (
     <div className="flex flex-col gap-5">
@@ -7,29 +13,50 @@ function LetterDensity() {
         Letter Density
       </p>
 
-      <div className="flex w-full items-center justify-between gap-3.5">
-        <p className="text-base font-normal tracking-tighter text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]">
-          E
-        </p>
+      <div className="flex flex-col gap-3">
+        <div className="flex w-full items-center justify-between gap-3.5">
+          <p className="text-base font-normal tracking-tighter text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]">
+            E
+          </p>
 
-        <progress
-          value="40"
-          max="100"
-          class="custom-progress custom-progress-dark h-3 w-full"
-        ></progress>
+          <progress
+            value="60"
+            max="100"
+            className="custom-progress h-3 w-full"
+          ></progress>
 
-        <p className="flex items-center gap-1 text-base font-normal tracking-tighter text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]">
-          40 <span>(16.0%)</span>
-        </p>
+          <p className="flex items-center gap-1 text-base font-normal tracking-tighter text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]">
+            40 <span>(16.0%)</span>
+          </p>
+        </div>
+
+        <div className="flex w-full items-center justify-between gap-3.5">
+          <p className="text-base font-normal tracking-tighter text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]">
+            I
+          </p>
+
+          <progress
+            value="40"
+            max="100"
+            className="custom-progress h-3 w-full"
+          ></progress>
+
+          <p className="flex items-center gap-1 text-base font-normal tracking-tighter text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]">
+            23 <span>(8.3%)</span>
+          </p>
+        </div>
       </div>
 
       {/* <p className="text-base font-normal tracking-tighter text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]">
         No characters found. Start typing to see letter density.
       </p> */}
 
-      <button className="flex cursor-pointer items-center gap-2 self-start text-xl font-normal tracking-tighter text-[var(--color-neutral-0)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-purple-500)] dark:text-[var(--color-neutral-800)]">
-        See {overflow ? "more" : "less"}
-        {overflow ? (
+      <button
+        onClick={toggleText}
+        className="flex cursor-pointer items-center gap-2 self-start text-xl font-normal tracking-tighter text-[var(--color-neutral-0)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-purple-500)] dark:text-[var(--color-neutral-800)]"
+      >
+        See {text}
+        {text === "More" ? (
           <svg
             width="12"
             height="7"
