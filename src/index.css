@@ -30,6 +30,9 @@
   /* Background Patterns */
   --bg-pattern-light: url("/images/bg-light-theme.png");
   --bg-pattern-dark: url("/images/bg-dark-theme.png");
+  --bg-pattern-character: url("/images/pattern-character-count.svg");
+  --bg-pattern-sentence: url("/images/pattern-sentence-count.svg");
+  --bg-pattern-word: url("/images/pattern-word-count.svg");
 }
 
 .dark {
@@ -41,6 +44,7 @@
   --color-neutral-200: hsl(235, 13%, 19%);
   --color-neutral-100: hsl(235, 14%, 15%);
   --color-neutral-0: hsl(233, 18%, 9%);
+  --color-orange-500: hsl(15, 99%, 67%);
 }
 
 /* Background Utilities */
@@ -54,4 +58,136 @@
   background-image: var(--bg-pattern-dark);
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.character {
+  background-image: var(--bg-pattern-character);
+  background-position: 145%;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.sentence {
+  background-image: var(--bg-pattern-sentence);
+  background-position: 145%;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.word {
+  background-image: var(--bg-pattern-word);
+  background-position: 145%;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+/* Custom checkbox */
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  cursor: pointer;
+  position: relative;
+  font-family: var(--font-sans);
+}
+
+/* hide the native checkbox visually but keep it accessible */
+.custom-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+/* styled checkbox box */
+.custom-checkbox__box {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--color-neutral-900);
+  border-radius: 4px;
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* when focus is on the checkbox */
+.custom-checkbox__input:focus-visible + .custom-checkbox__box {
+  outline: 2px solid var(--color-purple-500);
+  outline-offset: 2px;
+}
+
+.dark .custom-check__box-dark {
+  border: 1px solid var(--color-neutral-700);
+}
+
+/* when checked */
+.custom-checkbox__input:checked + .custom-checkbox__box {
+  background-color: var(--color-purple-400);
+  border-color: var(--color-purple-400);
+}
+
+/* checkmark */
+.custom-checkbox__box::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 4px;
+  height: 8px;
+  border: solid #171717;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* show checkmark when checked */
+.custom-checkbox__input:checked + .custom-checkbox__box::after {
+  opacity: 1;
+}
+
+/* Remove number input arrows in Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove number input arrows in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Custom styles for native progress bar */
+.custom-progress {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0.75rem;
+  background-color: var(--color-neutral-100);
+  overflow: hidden;
+}
+
+.dark .custom-progress-dark {
+  background-color: var(--color-neutral-800);
+}
+
+.custom-progress::-webkit-progress-bar {
+  background-color: var(--color-neutral-100);
+  border-radius: 0.75rem;
+}
+
+.custom-progress::-webkit-progress-value {
+  background-color: var(--color-purple-400);
+  border-radius: 0.75rem;
+}
+
+.custom-progress::-moz-progress-bar {
+  background-color: var(--color-purple-100);
+  border-radius: 0.75rem;
 }
