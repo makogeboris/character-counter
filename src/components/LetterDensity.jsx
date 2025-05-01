@@ -49,7 +49,7 @@ function LetterDensity({ showDensity, isTextEmpty, density }) {
               onClick={toggleText}
               className="flex cursor-pointer items-center gap-2 self-start text-xl font-normal tracking-tighter text-[var(--color-neutral-0)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-purple-500)] dark:text-[var(--color-neutral-800)]"
             >
-              See {showAll ? "Less" : "More"}
+              See {showAll ? "less" : "more"}
               <svg
                 width="12"
                 height="7"

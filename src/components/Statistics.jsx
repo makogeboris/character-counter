@@ -1,34 +1,37 @@
-function Statistics({ characters, words, sentence }) {
+function Statistics({ characters, words, sentence, excludeSpaces }) {
+  const formatStat = (value) =>
+    value !== undefined ? value.toString().padStart(2, "0") : "00";
+
   return (
     <div className="flex w-full flex-col gap-4 sm:flex-row">
       <div className="character w-full rounded-xl bg-purple-400 px-5 py-7 sm:px-3 sm:py-6 md:px-4 md:py-7">
         <div className="flex flex-col items-start">
-          <p className="text-5xl font-bold tracking-tighter text-[var(--color-neutral-0)] sm:text-7xl dark:text-[var(--color-neutral-800)]">
-            {characters}
+          <p className="stats text-5xl font-bold tracking-tighter sm:text-7xl">
+            {formatStat(characters)}
           </p>
-          <p className="text-xl font-bold tracking-tighter text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]">
-            Total Characters
+          <p className="stats text-xl font-normal tracking-tighter">
+            Total Characters {excludeSpaces && "(no space)"}
           </p>
         </div>
       </div>
 
       <div className="word w-full rounded-xl bg-yellow-500 px-5 py-7 sm:px-3 sm:py-6 md:px-4 md:py-7">
         <div className="flex flex-col items-start">
-          <p className="text-5xl font-bold tracking-tighter text-[var(--color-neutral-0)] sm:text-7xl dark:text-[var(--color-neutral-800)]">
-            {words}
+          <p className="stats text-5xl font-bold tracking-tighter sm:text-7xl">
+            {formatStat(words)}
           </p>
-          <p className="text-xl font-bold tracking-tighter text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]">
+          <p className="stats text-xl font-normal tracking-tighter">
             Word Count
           </p>
         </div>
       </div>
 
-      <div className="sentence w-full rounded-xl bg-orange-500 px-5 py-7 sm:px-3 sm:py-6 md:px-4 md:py-7">
+      <div className="sentence orange w-full rounded-xl px-5 py-7 sm:px-3 sm:py-6 md:px-4 md:py-7">
         <div className="flex flex-col items-start">
-          <p className="text-5xl font-bold tracking-tighter text-[var(--color-neutral-0)] sm:text-7xl dark:text-[var(--color-neutral-800)]">
-            {sentence}
+          <p className="stats text-5xl font-bold tracking-tighter sm:text-7xl">
+            {formatStat(sentence)}
           </p>
-          <p className="text-xl font-bold tracking-tighter text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]">
+          <p className="stats text-xl font-normal tracking-tighter">
             Sentence Count
           </p>
         </div>

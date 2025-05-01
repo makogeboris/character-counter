@@ -103,6 +103,7 @@ function MainContainer() {
             characters={characterCount()}
             words={wordCount()}
             sentence={sentenceCount()}
+            excludeSpaces={excludeSpaces}
           />
           <LetterDensity
             showDensity={showDensity}
