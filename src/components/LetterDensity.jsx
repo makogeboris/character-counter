@@ -25,7 +25,7 @@ function LetterDensity({ showDensity, isTextEmpty, density }) {
             {(showAll ? density : density.slice(0, 5)).map((item) => (
               <div
                 key={item.letter}
-                className="flex w-full items-center justify-between gap-3.5"
+                className="flex w-full items-center justify-between gap-4.5"
               >
                 <p className="min-w-4 text-base font-normal tracking-tighter text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]">
                   {item.letter}
@@ -37,7 +37,7 @@ function LetterDensity({ showDensity, isTextEmpty, density }) {
                   className="custom-progress h-3 w-full max-w-[49.6875rem]"
                 ></progress>
 
-                <p className="flex min-w-[5.625rem] items-center gap-1 text-base font-normal tracking-tighter text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]">
+                <p className="flex min-w-[5.625rem] items-center justify-end gap-1 text-base font-normal tracking-tighter text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]">
                   {item.count} <span>({item.percent}%)</span>
                 </p>
               </div>
