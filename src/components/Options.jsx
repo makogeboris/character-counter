@@ -19,7 +19,7 @@ function Options({
       <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-6">
         <div className="flex items-center">
           <label
-            className="custom-checkbox text-base tracking-tight text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]"
+            className="custom-checkbox text-neutral-0 text-base tracking-tight dark:text-neutral-800"
             htmlFor="spaces"
           >
             <input
@@ -36,7 +36,7 @@ function Options({
 
         <div className="flex min-h-[2.125rem] items-center">
           <label
-            className="custom-checkbox text-base tracking-tight text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]"
+            className="custom-checkbox text-neutral-0 text-base tracking-tight dark:text-neutral-800"
             htmlFor="limit"
           >
             <input
@@ -52,7 +52,7 @@ function Options({
 
           {showCharLimit && (
             <input
-              className="ml-2.5 w-[55px] rounded-md border border-[var(--color-neutral-200)] bg-[var(--color-neutral-900)] p-1 text-base font-normal text-[var(--color-neutral-0)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-purple-500)] dark:border-[var(--color-neutral-900)] dark:bg-[var(--color-neutral-0)] dark:text-[var(--color-neutral-700)]"
+              className="text-neutral-0 dark:bg-neutral-0 ml-2.5 w-[55px] rounded-md border border-neutral-200 bg-neutral-900 p-1 text-base font-normal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500 dark:border-neutral-900 dark:text-neutral-700"
               type="number"
               name="number"
               id="number"
@@ -63,7 +63,7 @@ function Options({
         </div>
       </div>
 
-      <p className="text-base leading-snug tracking-tight text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-800)]">
+      <p className="text-neutral-0 text-base leading-snug tracking-tight dark:text-neutral-800">
         Approx. reading time: {approxTime}
       </p>
     </div>

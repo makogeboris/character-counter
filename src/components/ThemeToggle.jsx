@@ -10,7 +10,7 @@ function ThemeToggle({ theme, toggleTheme }) {
     <button
       onClick={toggleTheme}
       aria-label={label}
-      className="xs:size-11 flex size-8 cursor-pointer items-center justify-center rounded-md bg-[var(--color-neutral-100)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-purple-500)] dark:bg-[var(--color-neutral-100)]"
+      className="xs:size-11 flex size-8 cursor-pointer items-center justify-center rounded-md bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500 dark:bg-neutral-100"
     >
       <img src={icon} alt={label} className="xs:size-5 size-[18px]" />
     </button>

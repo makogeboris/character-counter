@@ -10,7 +10,7 @@ function Header({ theme, toggleTheme }) {
           <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
         </div>
 
-        <h1 className="max-w-[30rem] text-center text-5xl font-bold tracking-tighter text-[var(--color-neutral-0)] sm:text-7xl dark:text-[var(--color-neutral-800)]">
+        <h1 className="text-neutral-0 max-w-[30rem] text-center text-5xl font-bold tracking-tighter sm:text-7xl dark:text-neutral-800">
           Analyze your text in real-time.
         </h1>
       </div>
