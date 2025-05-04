@@ -63,7 +63,7 @@ function Options({
         </div>
       </div>
 
-      <p className="text-neutral-0 text-base leading-snug tracking-tight dark:text-neutral-800">
+      <p className="text-base leading-snug tracking-tight text-neutral-800 dark:text-neutral-800">
         Approx. reading time: {approxTime}
       </p>
     </div>
