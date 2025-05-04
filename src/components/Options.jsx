@@ -52,7 +52,7 @@ function Options({
 
           {showCharLimit && (
             <input
-              className="text-neutral-0 dark:bg-neutral-0 ml-2.5 w-[55px] rounded-md border border-neutral-200 bg-neutral-900 p-1 text-base font-normal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500 dark:border-neutral-900 dark:text-neutral-700"
+              className="ml-2.5 w-[55px] rounded-md border border-neutral-200 bg-neutral-100 p-1 text-base font-normal text-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500 dark:border-neutral-200 dark:bg-neutral-100 dark:text-neutral-700"
               type="number"
               name="number"
               id="number"

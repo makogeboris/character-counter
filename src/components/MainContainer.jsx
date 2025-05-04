@@ -77,7 +77,7 @@ function MainContainer() {
   return (
     <main>
       <div className="mx-auto mb-8 flex w-full max-w-[61.875rem] flex-col items-center gap-8 px-4 sm:mb-24 sm:px-6 md:mb-48">
-        <form className="flex w-full flex-col gap-4">
+        <form className="flex w-full flex-col gap-3">
           <Textarea
             text={text}
             handleChange={handleChange}
