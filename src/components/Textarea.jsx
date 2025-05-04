@@ -16,7 +16,7 @@ function Textarea({
         name="comment"
         id="comment"
         placeholder="Start typing here… (or paste your text)"
-        className={`textarea w-full resize-none rounded-xl border-2 ${isOver ? "border-orange-500 dark:border-orange-800" : "border-neutral-200 dark:border-neutral-200"} bg-neutral-100 p-4 text-xl font-normal text-neutral-200 focus-visible:outline-1 ${isOver ? "focus-visible:outline-orange-500 dark:focus-visible:outline-orange-800" : "focus-visible:outline-purple-500"} sm:p-5 dark:bg-neutral-100 dark:text-neutral-700`}
+        className={`textarea w-full resize-none rounded-xl border-2 ${isOver ? "border-orange-500 dark:border-orange-800" : "border-neutral-200 dark:border-neutral-200"} bg-neutral-100 p-4 text-xl font-normal text-neutral-700 focus-visible:outline-1 ${isOver ? "focus-visible:outline-orange-500 dark:focus-visible:outline-orange-800" : "focus-visible:outline-purple-500"} sm:p-5 dark:bg-neutral-100 dark:text-neutral-700`}
       ></textarea>
 
       {isOver && (
