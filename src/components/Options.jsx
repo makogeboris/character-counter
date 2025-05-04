@@ -19,7 +19,7 @@ function Options({
       <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-6">
         <div className="flex items-center">
           <label
-            className="custom-checkbox text-neutral-0 text-base tracking-tight dark:text-neutral-800"
+            className="custom-checkbox dark:text-neutral-0 text-base tracking-tight text-neutral-800"
             htmlFor="spaces"
           >
             <input
@@ -36,7 +36,7 @@ function Options({
 
         <div className="flex min-h-[2.125rem] items-center">
           <label
-            className="custom-checkbox text-neutral-0 text-base tracking-tight dark:text-neutral-800"
+            className="custom-checkbox dark:text-neutral-0 text-base tracking-tight text-neutral-800"
             htmlFor="limit"
           >
             <input
