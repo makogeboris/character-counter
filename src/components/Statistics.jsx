@@ -1,4 +1,12 @@
-function Statistics({ characters, words, sentence, excludeSpaces }) {
+import { useTextAnalyzer } from "../contexts/TextAnalyzerContext";
+
+function Statistics() {
+  const { characterCount, wordCount, sentenceCount, excludeSpaces } =
+    useTextAnalyzer();
+  const characters = characterCount();
+  const words = wordCount();
+  const sentence = sentenceCount();
+
   const formatStat = (value) =>
     value !== undefined ? value.toString().padStart(2, "0") : "00";
 

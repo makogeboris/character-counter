@@ -1,10 +1,8 @@
-import { useState } from "react";
-import Textarea from "./Textarea";
-import Options from "./Options";
-import Statistics from "./Statistics";
-import LetterDensity from "./LetterDensity";
+import { createContext, useContext, useState } from "react";
 
-function MainContainer() {
+const TextAnalyzerContext = createContext();
+
+function TextAnalyzerProvider({ children }) {
   const [text, setText] = useState("");
   const [excludeSpaces, setExcludeSpaces] = useState(false);
   const [charLimit, setCharLimit] = useState(null);
@@ -75,45 +73,42 @@ function MainContainer() {
   }
 
   return (
-    <main>
-      <div className="mx-auto mb-8 flex w-full max-w-[63.375rem] flex-col items-center gap-8 px-4 sm:mb-24 sm:px-6 md:mb-48">
-        <form className="flex w-full flex-col gap-3">
-          <Textarea
-            text={text}
-            handleChange={handleChange}
-            charLimit={charLimit}
-            characterCount={characterCount()}
-            showCharLimit={showCharLimit}
-          />
-          <Options
-            charLimit={charLimit}
-            setCharLimit={setCharLimit}
-            showCharLimit={showCharLimit}
-            setShowCharLimit={setShowCharLimit}
-            handleCharLimitToggle={handleCharLimitToggle}
-            excludeSpaces={excludeSpaces}
-            setExcludeSpaces={setExcludeSpaces}
-            readingTime={readingTime()}
-            text={text}
-          />
-        </form>
-
-        <div className="flex w-full flex-col gap-6">
-          <Statistics
-            characters={characterCount()}
-            words={wordCount()}
-            sentence={sentenceCount()}
-            excludeSpaces={excludeSpaces}
-          />
-          <LetterDensity
-            showDensity={showDensity}
-            isTextEmpty={isTextEmpty}
-            density={letterDensity(text)}
-          />
-        </div>
-      </div>
-    </main>
+    <TextAnalyzerContext.Provider
+      value={{
+        text,
+        handleChange,
+        charLimit,
+        showCharLimit,
+        setCharLimit,
+        setShowCharLimit,
+        handleCharLimitToggle,
+        excludeSpaces,
+        setExcludeSpaces,
+        characterCount,
+        wordCount,
+        sentenceCount,
+        readingTime,
+        showDensity,
+        isTextEmpty,
+        letterDensity,
+        setShowDensity,
+        setIsTextEmpty,
+        wordCount,
+        sentenceCount,
+      }}
+    >
+      {children}
+    </TextAnalyzerContext.Provider>
   );
 }
 
-export default MainContainer;
+function useTextAnalyzer() {
+  const context = useContext(TextAnalyzerContext);
+  if (context === undefined)
+    throw new Error(
+      "TextAnalyzerContext was used outside of the TextAnalyzerProvider",
+    );
+  return context;
+}
+
+export { TextAnalyzerProvider, useTextAnalyzer };

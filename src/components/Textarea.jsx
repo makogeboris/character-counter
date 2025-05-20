@@ -1,11 +1,11 @@
-function Textarea({
-  text,
-  handleChange,
-  characterCount,
-  charLimit,
-  showCharLimit,
-}) {
-  const isOver = showCharLimit && characterCount > charLimit;
+import { useTextAnalyzer } from "../contexts/TextAnalyzerContext";
+
+function Textarea() {
+  const { text, handleChange, characterCount, charLimit, showCharLimit } =
+    useTextAnalyzer();
+
+  const characters = characterCount();
+  const isOver = showCharLimit && characters > charLimit;
 
   return (
     <div className="flex flex-col gap-3">

@@ -1,6 +1,10 @@
 import { useState } from "react";
+import { useTextAnalyzer } from "../contexts/TextAnalyzerContext";
 
-function LetterDensity({ showDensity, isTextEmpty, density }) {
+function LetterDensity() {
+  const {text, showDensity, isTextEmpty, letterDensity } = useTextAnalyzer();
+  const density = letterDensity(text);
+
   const [showAll, setShowAll] = useState(false);
 
   function toggleText() {

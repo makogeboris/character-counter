@@ -1,7 +1,10 @@
+import { useTheme } from "../contexts/ThemeContext";
 import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
 
-function Header({ theme, toggleTheme }) {
+function Header() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <header>
       <div className="mx-auto flex w-full max-w-[63.375rem] flex-col items-center gap-14 px-4 pt-4 pb-10 sm:px-6 sm:pt-[1.125rem] md:gap-12 md:pt-8 md:pb-12">
