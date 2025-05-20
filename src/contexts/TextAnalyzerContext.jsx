@@ -93,8 +93,6 @@ function TextAnalyzerProvider({ children }) {
         letterDensity,
         setShowDensity,
         setIsTextEmpty,
-        wordCount,
-        sentenceCount,
       }}
     >
       {children}
